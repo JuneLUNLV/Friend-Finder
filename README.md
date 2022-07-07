@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 <br/>
-It utilizes libraries such as React 18.0, Bootstrap 5, Redux 8.0.
+It utilizes libraries such as Typescript, React 18.0, Bootstrap 5, Redux 8.0.
 <br/>
 The project itself is for demonstration purpose only.
 
