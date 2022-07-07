@@ -6,6 +6,7 @@ The project itself is for demonstration purpose only.
 
 ## Demo
 [APP](https://friend-finder-junel.vercel.app/)
+<br>
 [Landing Page](https://friend-finder-junel.vercel.app/landing)
 
 ## Getting Started
