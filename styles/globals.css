@@ -65,13 +65,14 @@ a {
  }
 
  .fp-watermark{
-  display:'none';
+  display:none;
  }
 
  .arrow{
   -webkit-animation: mover 1s infinite  alternate;
   animation: mover 1s infinite  alternate;
   cursor: pointer;
+
  }
 
  @keyframes mover {
