@@ -1,9 +1,15 @@
+:root {
+  --main-bg-color: white;
+  --main-font-family: Roboto;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: var(--main-bg-color);
 }
 
 a {
@@ -13,4 +19,62 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+
+.personCard{
+  padding: 15px !important;
+  min-height: 250px !important;
+  background: linear-gradient(#f8f8f87d, #fff) !important;
+  box-shadow: 0 8px 16px -8px rgb(0 0 0 / 40%) !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+}
+
+.personCard:hover{
+  box-shadow: 0 8px 25px 0px rgb(0 0 0 / 40%) !important;
+  transform: translate3d(8px, -8px, 0px);
+}
+
+.spinner-border {
+  width:5rem !important;
+  height:5rem !important;
+ }
+
+ .displayCard{
+  padding: 15px !important;
+  min-height: 250px !important;
+  background: linear-gradient(#f8f8f87d, #fff) !important;
+  box-shadow: 0 8px 16px -8px rgb(0 0 0 / 40%) !important;
+  border-radius: 10px !important;
+  width:'fit-content';
+  height:'fit-content';
+ }
+
+ .clickedListCard{
+  padding: 15px !important;
+  background: linear-gradient(#f8f8f87d, #fff) !important;
+  box-shadow: 0 8px 16px -8px rgb(0 0 0 / 40%) !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+
+ }
+
+ .clickedListCard:hover{
+  transform: translateX(-20px);
+ }
+
+ .fp-watermark{
+  display:'none';
+ }
+
+ .arrow{
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+  cursor: pointer;
+ }
+
+ @keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
 }
