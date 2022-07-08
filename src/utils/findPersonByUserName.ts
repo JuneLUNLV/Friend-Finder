@@ -6,6 +6,7 @@ const findPersonByUsername = (clickedId:string,peopleList:Array<Person>) => {
         return(person)
       }
     }
+    return null;
 }
 
 export default findPersonByUsername;

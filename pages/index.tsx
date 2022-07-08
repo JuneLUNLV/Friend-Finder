@@ -18,6 +18,9 @@ import ScrollToTopButton from '../src/components/common/ScrollToTop';
 
 
 const names : Array<string> = [];
+const limit = 100;
+const peoplePerRequest = 20;
+
 const PersonFinder: NextPage = () => {
   const dispatch = useAppDispatch();
 
@@ -51,7 +54,7 @@ const PersonFinder: NextPage = () => {
   }
 
   const getMorePeople = async () => {
-    const response = await fetch("https://randomuser.me/api/?results=30");
+    const response = await fetch(`https://randomuser.me/api/?results=${peoplePerRequest}`);
     // if (!response.ok) {
     //   const message = `An error has occured: ${response.status}`;
     //   throw new Error(message);
@@ -62,7 +65,7 @@ const PersonFinder: NextPage = () => {
       names.push(`${person.name.first} ${person.name.last}`)
      }
      dispatch(appendPeopleList(people));
-     if(peopleList.length >= 5000){
+     if(peopleList.length >= limit-peoplePerRequest){
       setHasMore(false);
      }
   }
@@ -108,20 +111,20 @@ const PersonFinder: NextPage = () => {
           <Container>
           <Row>
               {
-                peopleListToDisplay.map((person:any,index)=>{
+                peopleListToDisplay.map((person:Person,index)=>{
                   return(
                     <CustomCol key={index} >
                       <PersonCard 
                       className="personCard"
                       displayDetails={true}
-                      id={person?.login.username}
-                      imgSrc={person?.picture.large} 
-                      name={`${person?.name.first} ${person?.name.last}`} 
-                      username={`${person?.login.username}`} 
-                      email={person?.email} 
-                      phone={person?.phone} 
-                      city={person?.location.city} 
-                      country={person?.location.country} 
+                      id={person.login.username}
+                      imgSrc={person.picture.large} 
+                      name={`${person.name.first} ${person.name.last}`} 
+                      username={`${person.login.username}`} 
+                      email={person.email} 
+                      phone={person.phone} 
+                      city={person.location.city} 
+                      country={person.location.country} 
                       />
                     </CustomCol>
                   )
@@ -140,20 +143,20 @@ const PersonFinder: NextPage = () => {
       <Offcanvas.Body>
         <ListGroup>
           {peopleClickedList.slice().reverse().map((clickedId,index)=>{
-              let person = findPersonByUsername(clickedId,peopleList)
+              let person:Person = findPersonByUsername(clickedId,peopleList)
               return(
                 <ListGroupItem key={index} style={{border:'none'}}>
                       <PersonCard 
                       className="clickedListCard"
                       displayDetails={false}
-                      id={person?.login.username}
-                      imgSrc={person?.picture.large} 
-                      name={`${person?.name.first} ${person?.name.last}`} 
-                      username={`${person?.login.username}`} 
-                      email={person?.email} 
-                      phone={person?.phone} 
-                      city={person?.location.city} 
-                      country={person?.location.country} 
+                      id={person.login.username}
+                      imgSrc={person.picture.large} 
+                      name={`${person.name.first} ${person.name.last}`} 
+                      username={`${person.login.username}`} 
+                      email={person.email} 
+                      phone={person.phone} 
+                      city={person.location.city} 
+                      country={person.location.country} 
                       />
                 </ListGroupItem>
               )
