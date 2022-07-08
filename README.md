@@ -5,9 +5,9 @@ It utilizes libraries such as Typescript, React 18.0, Bootstrap 5, Redux 8.0.
 The project itself is for demonstration purpose only.
 
 ## Demo
-[APP](https://friend-finder-junel.vercel.app/)
-<br>
 [Landing Page](https://friend-finder-junel.vercel.app/landing)
+<br>
+[APP](https://friend-finder-junel.vercel.app/)
 
 ## Getting Started
 
