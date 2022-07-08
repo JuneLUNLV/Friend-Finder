@@ -42,7 +42,7 @@ const NavBar = (props:any) => {
                 :
                 <>
                     <Button variant="outline-primary" className="me-2" onClick={()=>{router.push('/landing')}}>Landing Page</Button>
-                    <Button type="submit" onClick={()=>{dispatch(setLastVisitedOpen(true))}}>Last Visited Profiles</Button>
+                    <Button type="submit" onClick={()=>{dispatch(setLastVisitedOpen(true))}}>Visited Profiles</Button>
                 </>
 
             }
