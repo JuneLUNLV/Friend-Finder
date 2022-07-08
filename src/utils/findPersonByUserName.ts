@@ -5,6 +5,7 @@ const findPersonByUsername = (clickedId:string,peopleList:Array<Person>) => {
     for (let person of peopleList){
       if(person.login.username == clickedId){
         returnPerson = person
+        return returnPerson;
       }
     }
     return returnPerson;
